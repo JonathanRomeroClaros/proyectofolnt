@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Solicitudes - Colegiado Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans flex">
+    <!-- Barra Lateral (Sidebar) -->
+    <aside class="w-64 bg-slate-900 text-white min-h-screen p-5">
+        <h2 class="text-xl font-bold mb-8 border-b border-slate-700 pb-4"><i class="fas fa-balance-scale mr-2"></i> Colegiado Web</h2>
+        <nav>
+            <!-- Enlace inactivo -->
+            <a href="secretaria.html" class="block py-3 px-4 text-gray-300 hover:bg-slate-800 rounded-lg mb-2 transition-colors"><i class="fas fa-users mr-2"></i> Estado de Cuotas</a>
+            <!-- Enlace activo -->
+            <a href="validar_solicitudes.html" class="block py-3 px-4 bg-blue-700 rounded-lg mb-2 shadow"><i class="fas fa-file-signature mr-2"></i> Validar Solicitudes</a>
+            
+            <a href="login.html" class="block py-3 px-4 text-red-400 hover:bg-slate-800 rounded-lg mt-8 transition-colors"><i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión</a>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 p-8">
+        <header class="mb-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Validación de Solicitudes</h1>
+                <p class="text-gray-500">Gestión y autorización de folios para uso exclusivo de notarías</p>
+            </div>
+            <div class="bg-amber-100 text-amber-800 px-4 py-2 rounded-lg font-semibold text-sm shadow-sm border border-amber-200">
+                <i class="fas fa-bell mr-2"></i> 3 Solicitudes Pendientes
+            </div>
+        </header>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div class="mb-4 flex justify-between items-center">
+                <h2 class="text-lg font-bold text-gray-800">Bandeja de Entrada Administrativa</h2>
+                <div class="relative">
+                    <input type="text" placeholder="Buscar por Notaría..." class="bg-gray-50 border border-gray-300 text-sm rounded-lg pl-10 p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="text-gray-400 text-xs uppercase tracking-wider border-b bg-gray-50">
+                        <th class="p-4 font-semibold">ID Solicitud</th>
+                        <th class="p-4 font-semibold">Notaría Solicitante</th>
+                        <th class="p-4 font-semibold">Cantidad (Folios)</th>
+                        <th class="p-4 font-semibold">Fecha de Petición</th>
+                        <th class="p-4 font-semibold text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <!-- Fila 1: Pendiente -->
+                    <tr class="border-b hover:bg-gray-50 transition-colors">
+                        <td class="p-4 font-medium text-blue-600">REQ-2026-045</td>
+                        <td class="p-4">
+                            <p class="font-bold text-gray-900">Notaría 14</p>
+                            <p class="text-sm text-gray-500">Lic. Jorge Mendoza Ríos</p>
+                        </td>
+                        <td class="p-4 font-semibold">500</td>
+                        <td class="p-4 text-sm text-gray-600">16 Mayo 2026</td>
+                        <td class="p-4 text-center">
+                            <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded text-sm font-medium transition-colors mr-2 shadow-sm" title="Aprobar y Asignar">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded text-sm font-medium transition-colors shadow-sm" title="Rechazar">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                    <!-- Fila 2: Pendiente con alerta -->
+                    <tr class="border-b hover:bg-amber-50 bg-amber-50/30 transition-colors">
+                        <td class="p-4 font-medium text-blue-600">REQ-2026-046</td>
+                        <td class="p-4">
+                            <p class="font-bold text-gray-900">Notaría 42</p>
+                            <p class="text-sm text-amber-600 text-xs mt-1"><i class="fas fa-exclamation-triangle"></i> Adeudo de Cuotas</p>
+                        </td>
+                        <td class="p-4 font-semibold">1,000</td>
+                        <td class="p-4 text-sm text-gray-600">17 Mayo 2026</td>
+                        <td class="p-4 text-center">
+                            <button class="bg-emerald-600/50 cursor-not-allowed text-white px-3 py-1.5 rounded text-sm font-medium mr-2" title="No se puede aprobar por adeudo" disabled>
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded text-sm font-medium transition-colors shadow-sm" title="Rechazar">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 3: Pendiente normal -->
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="p-4 font-medium text-blue-600">REQ-2026-047</td>
+                        <td class="p-4">
+                            <p class="font-bold text-gray-900">Notaría 85</p>
+                            <p class="text-sm text-gray-500">Lic. Ana Karina López</p>
+                        </td>
+                        <td class="p-4 font-semibold">250</td>
+                        <td class="p-4 text-sm text-gray-600">17 Mayo 2026</td>
+                        <td class="p-4 text-center">
+                            <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded text-sm font-medium transition-colors mr-2 shadow-sm" title="Aprobar y Asignar">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded text-sm font-medium transition-colors shadow-sm" title="Rechazar">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

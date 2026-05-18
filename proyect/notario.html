@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Notario - Gestión de Folios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans flex">
+    <aside class="w-64 bg-slate-900 text-white min-h-screen p-5">
+        <h2 class="text-xl font-bold mb-8 border-b border-slate-700 pb-4"><i class="fas fa-stamp mr-2"></i> Mi Notaría</h2>
+        <nav>
+    <a href="notario.html" class="block py-3 px-4 bg-blue-700 rounded-lg mb-2 shadow"><i class="fas fa-book mr-2"></i> Mis Folios</a>
+    <a href="solicitar_folios.html" class="block py-3 px-4 text-gray-300 hover:bg-slate-800 rounded-lg mb-2"><i class="fas fa-plus-circle mr-2"></i> Solicitar Folios</a>
+    <a href="login.html" class="block py-3 px-4 text-red-400 hover:bg-slate-800 rounded-lg mt-8"><i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión</a>
+</nav>
+    </aside>
+
+    <main class="flex-1 p-8">
+        <header class="mb-8">
+            <h1 class="text-2xl font-bold text-gray-800">Panel de Gestión de Folios Notariales</h1>
+            <p class="text-gray-500">Bienvenido, vista exclusiva para titular de notaría.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Tarjetas de resumen -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-l-4 border-blue-600">
+                <h3 class="text-gray-500 text-sm font-semibold uppercase tracking-wider mb-2">Folios Disponibles</h3>
+                <p class="text-3xl font-bold text-gray-800">1,240</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 border-l-4 border-amber-500">
+                <h3 class="text-gray-500 text-sm font-semibold uppercase tracking-wider mb-2">Solicitudes en Proceso</h3>
+                <p class="text-3xl font-bold text-gray-800">1</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <h2 class="text-lg font-bold text-gray-800 mb-4">Últimos Lotes Asignados</h2>
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="text-gray-400 text-xs uppercase tracking-wider border-b">
+                        <th class="p-4 font-semibold">ID Lote</th>
+                        <th class="p-4 font-semibold">Rango de Folios</th>
+                        <th class="p-4 font-semibold">Fecha de Asignación</th>
+                        <th class="p-4 font-semibold">Estado</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-4 font-medium">L-2026-089</td>
+                        <td class="p-4">15000 - 15500</td>
+                        <td class="p-4">10 Mayo 2026</td>
+                        <td class="p-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                En Uso
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-4 font-medium">L-2026-012</td>
+                        <td class="p-4">14500 - 14999</td>
+                        <td class="p-4">15 Febrero 2026</td>
+                        <td class="p-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                                Agotado
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
